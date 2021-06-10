@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string.h>
 #include <math.h>
@@ -31,13 +32,14 @@ int main() {
     copyCidade((char*) "Cidade Cinco", 5, 19, 4);
     copyCidade((char*) "Cidade Seis", 8, 10, 5);
 
+    int arraySize = sizeof(cidades)/sizeof(cidades[0]);
     float sum = 0.0;
     int times = 0;
-    for(int i = 0; i< 7; i++) {
+    for(int i = 0; i< arraySize + 1; i++) {
         times++;
 
         previousCity = currentCity;
-        currentCity = i == 6 ? cidades[0] : cidades[i];
+        currentCity = i == arraySize ? cidades[0] : cidades[i];
 
         if(times == 1) {
             continue;
